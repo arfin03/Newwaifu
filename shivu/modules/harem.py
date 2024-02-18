@@ -15,9 +15,9 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
     user = await user_collection.find_one({'id': user_id})
     if not user:
         if update.message:
-            await update.message.reply_text('You Have Not Guessed any Characters Yet..')
+            await update.message.reply_text('Anda Belum Menebak Karakter Apa Pun Golek sek sana..')
         else:
-            await update.callback_query.edit_message_text('You Have Not Guessed any Characters Yet..')
+            await update.callback_query.edit_message_text('Awokawoakawoak Belum punya waifu makanya guess Nyet!!..')
         return
 
     characters = sorted(user['characters'], key=lambda x: (x['anime'], x['id']))
@@ -107,7 +107,7 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
                         await update.callback_query.edit_message_text(harem_message, parse_mode='HTML', reply_markup=reply_markup)
         else:
             if update.message:
-                await update.message.reply_text("Your List is Empty :)")
+                await update.message.reply_text("Daftar Anda Kosong Guess Sek! :)")
 
 
 async def harem_callback(update: Update, context: CallbackContext) -> None:
@@ -123,7 +123,7 @@ async def harem_callback(update: Update, context: CallbackContext) -> None:
 
     
     if query.from_user.id != user_id:
-        await query.answer("its Not Your Harem", show_alert=True)
+        await query.answer("ini bukan harem mu suk", show_alert=True)
         return
 
     
