@@ -36,7 +36,7 @@ async def start(update: Update, context: CallbackContext) -> None:
         caption = f"""
         ***Heyyyy...***
 
-***I am An Open Source Character Catcher Bot...​Add Me in Your group.. And I will send Random Characters After.. every 100 messages in Group... Use /guess to.. Collect that Characters in Your Collection.. and see Collection by using /Harem... So add in Your groups and Collect Your harem***
+***Saya Bot Penangkap Karakter Sumber Terbuka...​Tambahkan Saya di grup Anda.. Dan saya akan mengirimkan Karakter Acak Setelahnya.. setiap 100 pesan di Grup... Gunakan /guess untuk.. Kumpulkan Karakter itu di Koleksi Anda.. dan lihat Koleksi dengan menggunakan /Harem... Jadi tambahkan ke grup Anda dan Kumpulkan harem Anda***
         """
         
         keyboard = [
@@ -92,7 +92,7 @@ async def button(update: Update, context: CallbackContext) -> None:
         caption = f"""
         ***Hoyyyy...*** ✨
 
-***I am An Open Source Character Catcher Bot..​Add Me in Your group.. And I will send Random Characters After.. every 100 messages in Group... Use /guess to.. Collect that Characters in Your Collection.. and see Collection by using /Harem... So add in Your groups and Collect Your harem***
+***Saya Bot Penangkap Karakter Sumber Terbuka...​Tambahkan Saya di grup Anda.. Dan saya akan mengirimkan Karakter Acak Setelahnya.. setiap 100 pesan di Grup... Gunakan /guess untuk.. Kumpulkan Karakter itu di Koleksi Anda.. dan lihat Koleksi dengan menggunakan /Harem... Jadi tambahkan ke grup Anda dan Kumpulkan harem Anda***
         """
 
         
