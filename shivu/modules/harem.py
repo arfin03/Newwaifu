@@ -15,9 +15,9 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
     user = await user_collection.find_one({'id': user_id})
     if not user:
         if update.message:
-            await update.message.reply_text('Anda Belum Menebak Karakter Apa Pun Golek sek sana..')
+            await update.message.reply_text('You Have Not Guessed any Characters Yet..')
         else:
-            await update.callback_query.edit_message_text('Awokawoakawoak Belum punya waifu makanya guess Nyet!!..')
+            await update.callback_query.edit_message_text('You Have Not Guessed any Characters Yet..')
         return
 
     characters = sorted(user['characters'], key=lambda x: (x['anime'], x['id']))
@@ -42,12 +42,14 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
     current_grouped_characters = {k: list(v) for k, v in groupby(current_characters, key=lambda x: x['anime'])}
 
     for anime, characters in current_grouped_characters.items():
-        harem_message += f'\n🏖️<b>{anime} {len(characters)}/{await collection.count_documents({"anime": anime})}</b>\n'
+    harem_message += f'\n🏖️<b>{anime} {len(characters)}/{await collection.count_documents({"anime": anime})}</b>\n'
+    
+        
 
         for character in characters:
             
             count = character_counts[character['id']]  
-            harem_message += f'{character["id"]} {character["name"]} ×{count}\n'
+            harem_message += f'Rarity {character["rarity"]} ({character["id"]}) ({character["name"]} ×{character["quantity"]}) Character\n'
 
 
     total_count = len(user['characters'])
@@ -107,7 +109,7 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
                         await update.callback_query.edit_message_text(harem_message, parse_mode='HTML', reply_markup=reply_markup)
         else:
             if update.message:
-                await update.message.reply_text("Daftar Anda Kosong Guess Sek! :)")
+                await update.message.reply_text("Your List is Empty :)")
 
 
 async def harem_callback(update: Update, context: CallbackContext) -> None:
@@ -123,7 +125,7 @@ async def harem_callback(update: Update, context: CallbackContext) -> None:
 
     
     if query.from_user.id != user_id:
-        await query.answer("ini bukan harem mu suk", show_alert=True)
+        await query.answer("its Not Your Harem", show_alert=True)
         return
 
     
