@@ -1,5 +1,7 @@
 from telegram import Update
 from itertools import groupby
+import urllib.request
+import re
 import math
 from html import escape 
 import random
@@ -33,7 +35,7 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
     if page < 0 or page >= total_pages:
         page = 0  
 
-    harem_message = f"<b>{escape(update.effective_user.first_name)}'s Harem - Page {page+1}/{total_pages}</b>\n"
+    harem_message = f"<b>{escape(update.effective_user.first_name)}'s ʜᴀʀᴇᴍ - ᴘᴀɢᴇ {page+1}/{total_pages}</b>\n"
 
     
     current_characters = unique_characters[page*15:(page+1)*15]
@@ -43,18 +45,18 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
 
     for anime, characters in current_grouped_characters.items():
         harem_message += f'\n<b>{anime} {len(characters)}/{await collection.count_documents({"anime": anime})}</b>\n'
-    
-        
 
         for character in characters:
             
             count = character_counts[character['id']]  
-            harem_message += f'{character["rarity"]} {character["id"]} {character["name"]} ×{count}\n'
+            harem_message += f'♦<b>{character["id"]} | {character["name"]} | {character["rarity"]} ×{count}</b>\n_______________________\n'
 
 
     total_count = len(user['characters'])
     
-    keyboard = [[InlineKeyboardButton(f"🌐 See Collection ({total_count})", switch_inline_query_current_chat=f"collection.{user_id}")]]
+    keyboard = [[InlineKeyboardButton(f"See Collection ({total_count})", switch_inline_query_current_chat=f"collection.{user_id}")]] 
+    
+    keyboard = [[InlineKeyboardButton(f"Close", callback_data="close")]]
 
 
     if total_pages > 1:
@@ -129,14 +131,16 @@ async def harem_callback(update: Update, context: CallbackContext) -> None:
         return
 
     
-    await harem(update, context, page)
+    await harem(update, context, page) 
+
+async def close(update: Update, context: CallbackQuery) -> None:
+    query = query.message
+    await query.delete()
 
 
 
 
-application.add_handler(CommandHandler(["harem", "collection","mywaifu"], harem,block=False))
+application.add_handler(CommandHandler(["harem", "collection"], harem,block=False))
 harem_handler = CallbackQueryHandler(harem_callback, pattern='^harem', block=False)
 application.add_handler(harem_handler)
-    
-
     
