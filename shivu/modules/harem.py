@@ -42,14 +42,14 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
     current_grouped_characters = {k: list(v) for k, v in groupby(current_characters, key=lambda x: x['anime'])}
 
     for anime, characters in current_grouped_characters.items():
-        harem_message += f'\n<b>{anime} {len(characters)}/{await collection.count_documents({"anime": anime})}</b>\n'
+        harem_message += f'\n<b>⌬ {anime} 〔{len(characters)}/{await collection.count_documents({"anime": anime})}〕</b>\n'
     
         
 
         for character in characters:
             
             count = character_counts[character['id']]  
-            harem_message += f'{character["rarity"]} {character["id"]} {character["name"]} ×{count}\n'
+            harem_message += f'◈ ⌠{character["rarity"][0]}⌡ {character["id"]} {character["name"]} ⌠×{count}⌡\n'
 
 
     total_count = len(user['characters'])
@@ -134,7 +134,7 @@ async def harem_callback(update: Update, context: CallbackContext) -> None:
 
 
 
-application.add_handler(CommandHandler(["harem", "collection"], harem,block=False))
+application.add_handler(CommandHandler(["harem"], harem,block=False))
 harem_handler = CallbackQueryHandler(harem_callback, pattern='^harem', block=False)
 application.add_handler(harem_handler)
     
