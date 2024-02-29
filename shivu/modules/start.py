@@ -34,9 +34,14 @@ async def start(update: Update, context: CallbackContext) -> None:
         
         
         caption = f"""
-        ***Heyyyy...***
+        ***𝙷𝚊𝚕𝚕𝚘***
 
-***Saya Bot Penangkap Karakter Sumber Terbuka...​Tambahkan Saya di grup Anda.. Dan saya akan mengirimkan Karakter Acak Setelahnya.. setiap 100 pesan di Grup... Gunakan /guess untuk.. Kumpulkan Karakter itu di Koleksi Anda.. dan lihat Koleksi dengan menggunakan /Harem... Jadi tambahkan ke grup Anda dan Kumpulkan harem Anda***
+***ɪ ᴀᴍ 𝙶𝚄𝙴𝚂𝚂 𝙷𝙷𝙰𝚁𝙴𝙼 𝙱𝙾𝚃 ʙᴏᴛ ɪ sᴘᴀᴡɴ ᴀɴɪᴍᴇ ᴄʜᴀʀᴀᴄᴛᴇʀs
+ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘs, ᴀɴᴅ ʟᴇᴛ ᴜsᴇʀs ᴄᴏʟʟᴇᴄᴛ ᴛʜᴇᴍ
+⍟ sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ
+ʙʏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ
+
+ʜɪᴛ help ᴛᴏ ғɪɴᴅ ᴏᴜᴛ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ***
         """
         
         keyboard = [
@@ -90,9 +95,14 @@ async def button(update: Update, context: CallbackContext) -> None:
     elif query.data == 'back':
 
         caption = f"""
-        ***Hoyyyy...*** ✨
+        ***𝙷𝚊𝚕𝚕𝚘*** ✨
 
-***Saya Bot Penangkap Karakter Sumber Terbuka...​Tambahkan Saya di grup Anda.. Dan saya akan mengirimkan Karakter Acak Setelahnya.. setiap 100 pesan di Grup... Gunakan /guess untuk.. Kumpulkan Karakter itu di Koleksi Anda.. dan lihat Koleksi dengan menggunakan /Harem... Jadi tambahkan ke grup Anda dan Kumpulkan harem Anda***
+***ɪ ᴀᴍ 𝙶𝚄𝙴𝚂𝚂 𝙷𝙷𝙰𝚁𝙴𝙼 𝙱𝙾𝚃 ʙᴏᴛ ɪ sᴘᴀᴡɴ ᴀɴɪᴍᴇ ᴄʜᴀʀᴀᴄᴛᴇʀs
+ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘs, ᴀɴᴅ ʟᴇᴛ ᴜsᴇʀs ᴄᴏʟʟᴇᴄᴛ ᴛʜᴇᴍ
+⍟ sᴏ ᴡʜᴀᴛ ᴀʀᴇ ʏᴏᴜ ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀᴅᴅ ᴍᴇ ɪɴ ʏᴏᴜʀ ɢʀᴏᴜᴘ
+ʙʏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ
+
+ʜɪᴛ help ᴛᴏ ғɪɴᴅ ᴏᴜᴛ ᴍᴏʀᴇ ᴀʙᴏᴜᴛ ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ***
         """
 
         
