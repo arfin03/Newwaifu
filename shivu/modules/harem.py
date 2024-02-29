@@ -63,6 +63,9 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
         if page > 0:
             nav_buttons.append(InlineKeyboardButton("⬅️", callback_data=f"harem:{page-1}:{user_id}"))
         if page < total_pages - 1:
+            nav_buttons.append(InlineKeyboardButton("𝚇𝟸 𝚂𝙿𝙴𝙴𝙳", callback_data=f"harem:{page+2}:{user_id}"))
+        keyboard.append(nav_buttons)
+        if page < total_pages - 2:
             nav_buttons.append(InlineKeyboardButton("➡️", callback_data=f"harem:{page+1}:{user_id}"))
         keyboard.append(nav_buttons)
 
