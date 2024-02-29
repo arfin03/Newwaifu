@@ -40,11 +40,11 @@ async def start(update: Update, context: CallbackContext) -> None:
         """
         
         keyboard = [
-            [InlineKeyboardButton("ADD ME", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
-            [InlineKeyboardButton("SUPPORT", url=f'https://t.me/{SUPPORT_CHAT}'),
-            InlineKeyboardButton("UPDATES", url=f'https://t.me/{UPDATE_CHAT}')],
-            [InlineKeyboardButton("HELP", callback_data='help')],
-            [InlineKeyboardButton("SOURCE", url=f'https://youtu.be/wVmZD4pZ9PE?si=O-IYueqYo880JVTG')]
+            [InlineKeyboardButton("◆𝙰𝙳𝙳 𝙼𝙴◆", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
+            [InlineKeyboardButton("✩𝚂𝚄𝙿𝙿𝙾𝚁𝚃✩", url=f'https://t.me/{SUPPORT_CHAT}'),
+            InlineKeyboardButton("✪𝚄𝙿𝙳𝙰𝚃𝙴𝚂✪"", url=f'https://t.me/{UPDATE_CHAT}')],
+            [InlineKeyboardButton("★𝙷𝙴𝙻𝙿★", callback_data='help')],
+            [InlineKeyboardButton("▣𝙲𝚁𝙴𝙳𝙸𝚃𝚂▣", url=f'https://youtu.be/wVmZD4pZ9PE?si=O-IYueqYo880JVTG')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         photo_url = random.choice(PHOTO_URL)
@@ -54,11 +54,11 @@ async def start(update: Update, context: CallbackContext) -> None:
     else:
         photo_url = random.choice(PHOTO_URL)
         keyboard = [
-            [InlineKeyboardButton("ADD ME", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
-            [InlineKeyboardButton("SUPPORT", url=f'https://t.me/{SUPPORT_CHAT}'),
-            InlineKeyboardButton("UPDATES", url=f'https://t.me/{UPDATE_CHAT}')],
-            [InlineKeyboardButton("HELP", callback_data='help')],
-            [InlineKeyboardButton("SOURCE", url=f'https://youtu.be/wVmZD4pZ9PE?si=O-IYueqYo880JVTG')]
+            [InlineKeyboardButton("◆𝙰𝙳𝙳 𝙼𝙴◆", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
+            [InlineKeyboardButton("✩𝚂𝚄𝙿𝙿𝙾𝚁𝚃✩", url=f'https://t.me/{SUPPORT_CHAT}'),
+            InlineKeyboardButton("✪𝚄𝙿𝙳𝙰𝚃𝙴𝚂✪"", url=f'https://t.me/{UPDATE_CHAT}')],
+            [InlineKeyboardButton("★𝙷𝙴𝙻𝙿★", callback_data='help')],
+            [InlineKeyboardButton("▣𝙲𝚁𝙴𝙳𝙸𝚃𝚂▣", url=f'https://youtu.be/wVmZD4pZ9PE?si=O-IYueqYo880JVTG')]
         ]
         
         reply_markup = InlineKeyboardMarkup(keyboard)
@@ -97,11 +97,11 @@ async def button(update: Update, context: CallbackContext) -> None:
 
         
         keyboard = [
-            [InlineKeyboardButton("ADD ME", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
-            [InlineKeyboardButton("SUPPORT", url=f'https://t.me/{SUPPORT_CHAT}'),
-            InlineKeyboardButton("UPDATES", url=f'https://t.me/{UPDATE_CHAT}')],
-            [InlineKeyboardButton("HELP", callback_data='help')],
-            [InlineKeyboardButton("SOURCE", url=f'https://youtu.be/wVmZD4pZ9PE?si=O-IYueqYo880JVTG')]
+            [InlineKeyboardButton("◆𝙰𝙳𝙳 𝙼𝙴◆", url=f'http://t.me/{BOT_USERNAME}?startgroup=new')],
+            [InlineKeyboardButton("✩𝚂𝚄𝙿𝙿𝙾𝚁𝚃✩", url=f'https://t.me/{SUPPORT_CHAT}'),
+            InlineKeyboardButton("✪𝚄𝙿𝙳𝙰𝚃𝙴𝚂✪"", url=f'https://t.me/{UPDATE_CHAT}')],
+            [InlineKeyboardButton("★𝙷𝙴𝙻𝙿★", callback_data='help')],
+            [InlineKeyboardButton("▣𝙲𝚁𝙴𝙳𝙸𝚃𝚂▣", url=f'https://youtu.be/wVmZD4pZ9PE?si=O-IYueqYo880JVTG')]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
 
