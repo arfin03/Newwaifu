@@ -11,7 +11,7 @@ class Config(object):
     SUPPORT_CHAT = "gcanimecommunity"
     UPDATE_CHAT = "Origanimeinfo"
     BOT_USERNAME = "Guess_wwaifu_bot"
-    CHARA_CHANNEL_ID = "-1002124487227"
+    CHARA_CHANNEL_ID = "-1002118604770"
     api_id = 17204044
     api_hash = "db2dd5d8401971aa433ef3c0f9a108da"
 
