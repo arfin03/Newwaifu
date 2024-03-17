@@ -100,7 +100,7 @@ async def send_image(update: Update, context: CallbackContext) -> None:
     await context.bot.send_photo(
         chat_id=chat_id,
         photo=character['img_url'],
-        caption=f"""A New {character['rarity']} Character Appeared...\n/guess Character Name and add in Your Harem""",
+        caption=f"""A New {character['rarity']} Character Appeared...\n/wguess 𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫 𝐍𝐚𝐦𝐞 𝐚𝐧𝐝 𝐚𝐝𝐝 𝐢𝐧 𝐘𝐨𝐮𝐫 𝐇𝐚𝐫𝐞𝐦""",
         parse_mode='Markdown')
 
 
@@ -237,7 +237,7 @@ async def fav(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     """Run bot."""
 
-    application.add_handler(CommandHandler(["guess", "protecc", "collect", "grab", "hunt"], guess, block=False))
+    application.add_handler(CommandHandler(["wguess", "protecc", "collect", "grab", "guess"], guess, block=False))
     application.add_handler(CommandHandler("fav", fav, block=False))
     application.add_handler(MessageHandler(filters.ALL, message_counter, block=False))
 
