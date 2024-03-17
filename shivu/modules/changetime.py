@@ -27,7 +27,7 @@ async def change_time(client: Client, message: Message):
 
         new_frequency = int(args[1])
         if new_frequency < 100:
-            await message.reply_text('The message frequency must be greater than or equal to 200.')
+            await message.reply_text('The message frequency must be greater than or equal to 100.')
             return
 
     
