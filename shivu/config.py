@@ -6,7 +6,7 @@ class Config(object):
     sudo_users = "6649432492", "5008662958", "7127913934", "5843270062", "1495261563", "6489025882", "6752263178"
     GROUP_ID = -1002015833205
     TOKEN = "6872064337:AAGyofMcK81eno1XLCTG2f4LeRf9FacB-5Y"
-    mongo_url = "mongodb+srv://arfin01:Arkaku123@cluster0.s2drx4p.mongodb.net/?retryWrites=true&w=majority"
+    mongo_url = "mongodb+srv://Arfin:Arfin@cluster0.ynbtqna.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     PHOTO_URL = ["https://telegra.ph/file/3c876536b6e57ed8bf5bb.jpg", "https://telegra.ph/file/d4f4d52d126fc95fbe312.jpg"]
     SUPPORT_CHAT = "gcanimecommunity"
     UPDATE_CHAT = "guess_update"
