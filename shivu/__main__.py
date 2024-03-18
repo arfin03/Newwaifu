@@ -100,7 +100,7 @@ async def send_image(update: Update, context: CallbackContext) -> None:
     await context.bot.send_photo(
         chat_id=chat_id,
         photo=character['img_url'],
-        caption=f"""A New {character["rarity"][0]} Character Appeared...\n/wguess 𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫 𝐍𝐚𝐦𝐞 𝐚𝐧𝐝 𝐚𝐝𝐝 𝐢𝐧 𝐘𝐨𝐮𝐫 𝐇𝐚𝐫𝐞𝐦""",
+        caption=f"""A New {character["rarity"][0]} Character Appeared...\n/take 𝐂𝐡𝐚𝐫𝐚𝐜𝐭𝐞𝐫 𝐍𝐚𝐦𝐞 𝐚𝐧𝐝 𝐚𝐝𝐝 𝐢𝐧 𝐘𝐨𝐮𝐫 𝐇𝐚𝐫𝐞𝐦""",
         parse_mode='Markdown')
 
 
@@ -195,7 +195,7 @@ async def guess(update: Update, context: CallbackContext) -> None:
         keyboard = [[InlineKeyboardButton(f"See Harem", switch_inline_query_current_chat=f"collection.{user_id}")]]
 
 
-        await update.message.reply_text(f'<b><a href="tg://user?id={user_id}">{escape(update.effective_user.first_name)}</a></b> You Guessed a New Character ✅️ \n\n𝗡𝗔𝗠𝗘: <b>{last_characters[chat_id]["name"]}</b> \n𝗔𝗡𝗜𝗠𝗘: <b>{last_characters[chat_id]["anime"]}</b> \n𝗥𝗔𝗜𝗥𝗧𝗬: <b>{last_characters[chat_id]["rarity"]}</b>\n\nThis Character added in Your harem.. use /harem To see your harem', parse_mode='HTML', reply_markup=InlineKeyboardMarkup(keyboard))
+        await update.message.reply_text(f'<b><a href="tg://user?id={user_id}">{escape(update.effective_user.first_name)}</a></b> You Guessed a New Character ✅️ \n\n𝗡𝗔𝗠𝗘: <b>{last_characters[chat_id]["name"]}</b> \n𝗔𝗡𝗜𝗠𝗘: <b>{last_characters[chat_id]["anime"]}</b> \n𝗥𝗔𝗜𝗥𝗧𝗬: <b>{last_characters[chat_id]["rarity"]}</b>\n\nThis Character added in Your harem.. use /myharem To see your harem', parse_mode='HTML', reply_markup=InlineKeyboardMarkup(keyboard))
 
     else:
         await update.message.reply_text('Please Write Correct Character Name... ❌️')
@@ -237,7 +237,7 @@ async def fav(update: Update, context: CallbackContext) -> None:
 def main() -> None:
     """Run bot."""
 
-    application.add_handler(CommandHandler(["wguess", "protecc", "collect", "grab", "guess"], guess, block=False))
+    application.add_handler(CommandHandler(["take", "grab", "hunt", "guess"], guess, block=False))
     application.add_handler(CommandHandler("fav", fav, block=False))
     application.add_handler(MessageHandler(filters.ALL, message_counter, block=False))
 
