@@ -61,12 +61,12 @@ async def harem(update: Update, context: CallbackContext, page=0) -> None:
         
         nav_buttons = []
         if page > 0:
-            nav_buttons.append(InlineKeyboardButton("⬅️", callback_data=f"harem:{page-1}:{user_id}"))
+            nav_buttons.append(InlineKeyboardButton("🤜", callback_data=f"harem:{page-1}:{user_id}"))
         if page < total_pages - 1:
             nav_buttons.append(InlineKeyboardButton("𝚇𝟸 𝚂𝙿𝙴𝙴𝙳", callback_data=f"harem:{page+2}:{user_id}"))
         keyboard.append(nav_buttons)
         if page < total_pages - 2:
-            nav_buttons.append(InlineKeyboardButton("➡️", callback_data=f"harem:{page+1}:{user_id}"))
+            nav_buttons.append(InlineKeyboardButton("🤛", callback_data=f"harem:{page+1}:{user_id}"))
         keyboard.append(nav_buttons)
 
     reply_markup = InlineKeyboardMarkup(keyboard)
@@ -137,7 +137,7 @@ async def harem_callback(update: Update, context: CallbackContext) -> None:
 
 
 
-application.add_handler(CommandHandler(["harem"], harem,block=False))
+application.add_handler(CommandHandler(["myharem", "harem"], harem,block=False))
 harem_handler = CallbackQueryHandler(harem_callback, pattern='^harem', block=False)
 application.add_handler(harem_handler)
     
