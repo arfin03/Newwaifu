@@ -6,13 +6,13 @@ from telegram.ext import CommandHandler, CallbackContext
 
 from shivu import application, sudo_users, collection, db, CHARA_CHANNEL_ID, SUPPORT_CHAT
 
-WRONG_FORMAT_TEXT = """Wrong ❌️ format...  eg. /upload Img_url muzan-kibutsuji Demon-slayer 3
+WRONG_FORMAT_TEXT = """Wrong ❌️ format...  eg. /upload Img_url Anjay-Alok Free-peler 3
 
 img_url character-name anime-name rarity-number
 
 use rarity number accordingly rarity Map
 
-rarity_map = 1 (⚪️ Common), 2 (🟣 Rare), 3 (🟡 Legendary), 4 (🟢 Medium), 5 (💮 Limited), 6 (🔮 Super Rare), 7 (⚜️ Infinity Edition) 8 (❄️ Premium Edison)"""
+rarity_map = 1 (⚪️ Common), 2 (🟠 Rare), 3 (🟢 Medium), 4 (🟡 Legendary), 5 (💮 Spesial Edison), 6 (🔮 Mytical ), 7 (🎐 Celestial) 8 (❄️ Premium Edison)"""
 
 
 
@@ -30,7 +30,7 @@ async def get_next_sequence_number(sequence_name):
 
 async def upload(update: Update, context: CallbackContext) -> None:
     if str(update.effective_user.id) not in sudo_users:
-        await update.message.reply_text('Ask My Owner...')
+        await update.message.reply_text('Hanya Untuk Adder Kids...')
         return
 
     try:
@@ -48,7 +48,7 @@ async def upload(update: Update, context: CallbackContext) -> None:
             await update.message.reply_text('Invalid URL.')
             return
 
-        rarity_map = {1: "⚪ Common", 2: "🟣 Rare", 3: "🟡 Legendary", 4: "🟢 Medium", 5: "💮 Limited", 6: "🔮 Super Rare", 7: "⚜️ Infinity Edition", 8: "❄️ Premium Edison"}
+        rarity_map = {1: "⚪ Common", 2: "🟠 Rare", 3: "🟢 Medium", 4: "🟡 Legendary", 5: "💮 Spesial Edison", 6: "🔮 Mytical", 7: "🎐 Celestial", 8: "❄️ Premium Edison"}
         try:
             rarity = rarity_map[int(args[3])]
         except KeyError:
@@ -132,7 +132,7 @@ async def update(update: Update, context: CallbackContext) -> None:
         if args[1] in ['name', 'anime']:
             new_value = args[2].replace('-', ' ').title()
         elif args[1] == 'rarity':
-            rarity_map = {1: "⚪ Common", 2: "🟣 Rare", 3: "🟡 Legendary", 4: "🟢 Medium", 5: "💮 Limited", 6: "🔮 Super Rare", 7: "⚜️ Infinity Edition", 8: "❄️ Premium Edison"}
+            rarity_map = {1: "⚪ Common", 2: "🟠 Rare", 3: "🟢 Medium", 4: "🟡 Legendary", 5: "💮 Spesial Edison", 6: "🔮 Mytical", 7: "🎐 Celestial", 8: "❄️ Premium Edison"}
             try:
                 new_value = rarity_map[int(args[2])]
             except KeyError:
